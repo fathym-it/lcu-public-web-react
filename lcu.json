@@ -1,7 +1,7 @@
 {
   "Package": {
-    "Name": "@fathym-it/lcu-public-web-react",
-    "Description": "An LCU for installing @fathym-it/lcu-public-web-react.",
+    "Name": "React Quickstart Project - Forked Recipe",
+    "Description": "A basic template to quickly deploy a React app to Fathym.",
     "Button": "Launch",
     "Image": "https://www.fathym.com/assets/images/logo.png",
     "PreviewImage": "https://www.fathym.com/assets/images/logo.png",
