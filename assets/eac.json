@@ -45,7 +45,7 @@
         }
       },
       "Sources": {
-        "fork|github://fathym-it/arcade-recipe": {
+        "fork|github://fathym-it/public-web-react": {
           "DevOpsActionTriggerLookups": ["github-artifacts-release-react"],
           "Branches": ["main"],
           "MainBranch": "main",
