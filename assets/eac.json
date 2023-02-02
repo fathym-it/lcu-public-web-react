@@ -51,6 +51,7 @@
           "MainBranch": "main",
           "Organization": "fathym-it",
           "Repository": "public-web-react",
+          "Name": "github://fathym-it/public-web-react",
           "Type": "GitHub"
         }
       }
