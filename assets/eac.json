@@ -1,59 +1,80 @@
 {
   "Applications": {
-    "$1": {
-      "Application": {
+    "{{PROJECT_LOOKUP}}-public-web-react": {
+      "Details": {
         "Description": "A basic starting point for sites built with React.",
         "Name": "React Quickstart Project - Forked Recipe"
       },
       "LookupConfig": {
         "PathRegex": "/.*"
       },
-      "LowCodeUnit": {
-        "SourceControlLookup": "fork|github://fathym-it/public-web-react",
-        "Build": "latest",
-        "Path": "lcu-github-artifacts-release.yml",
-        "Type": "GitHub"
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/public-web-react",
+        "Type": "GitHubLowCodeUnit"
       },
       "Processor": {
-        "BaseHref": "/",
-        "DefaultFile": "index.html",
-        "Type": "DFS"
+        "Details": {
+          "BaseHref": "/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
       }
     }
   },
   "Environments": {
-    "$#.PrimaryEnvironment": {
+    "{{EaC.PrimaryEnvironment}}": {
       "Artifacts": {
         "react-build-release": {
-          "Name": "React Build/Release",
-          "Output": "./build",
-          "Type": "GitHub",
-          "BuildCommand": "npm run build",
-          "InstallCommand": "npm ci",
-          "NPMRegistry": "https://registry.npmjs.org/"
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "React Build/Release",
+            "Output": "./build",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm ci",
+            "NPMRegistry": "https://registry.npmjs.org/"
+          }
         }
       },
       "DevOpsActions": {
         "github-artifacts-release-react": {
-          "Name": "GitHub Artifacts - Release - React",
-          "Path": "lcu-github-artifacts-release.yml",
           "ArtifactLookups": ["react-build-release"],
-          "Templates": [
-            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
-            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
-          ]
+          "Details": {
+            "Name": "GitHub Artifacts - Release - React",
+            "Path": "lcu-github-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+            ]
+          }
         }
       },
       "Sources": {
         "fork|github://fathym-it/public-web-react": {
           "DevOpsActionTriggerLookups": ["github-artifacts-release-react"],
-          "Branches": ["main"],
-          "MainBranch": "main",
-          "Organization": "fathym-it",
-          "Repository": "public-web-react",
-          "Name": "github://fathym-it/public-web-react",
-          "Type": "GitHub"
+          "Details": {
+            "Branches": ["main"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "public-web-react",
+            "Name": "github://{{ORGANIZATION}}/public-web-react"
+          },
+          "Type": "GitHubSourceControl"
         }
+      }
+    }
+  },
+  "Projects": {
+    "{{PROJECT_LOOKUP}}": {
+      "ApplicationLookups": [
+        "{{PROJECT_LOOKUP}}-public-web-react"
+      ],
+      "Details": {
+        "Name": "{{Package.Details.Name}}",
+        "Description": "{{Package.Details.Description}}"
       }
     }
   }
