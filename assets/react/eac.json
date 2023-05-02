@@ -71,11 +71,7 @@
     "{{PROJECT_LOOKUP}}": {
       "ApplicationLookups": [
         "{{PROJECT_LOOKUP}}-public-web-react"
-      ],
-      "Details": {
-        "Name": "{{Package.Details.Name}}",
-        "Description": "{{Package.Details.Description}}"
-      }
+      ]
     }
   }
 }
