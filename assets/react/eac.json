@@ -1,6 +1,6 @@
 {
   "Applications": {
-    "{{PROJECT_LOOKUP}}-public-web-react": {
+    "{{$1}}-public-web-react": {
       "Details": {
         "Description": "A basic starting point for sites built with React.",
         "Name": "React Quickstart Project - Forked Recipe"
@@ -70,7 +70,7 @@
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
       "ApplicationLookups": [
-        "{{PROJECT_LOOKUP}}-public-web-react"
+        "{{$1}}-public-web-react"
       ]
     }
   }
