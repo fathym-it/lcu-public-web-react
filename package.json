@@ -1,6 +1,6 @@
 {
   "name": "@fathym-it/lcu-public-web-react",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "@fathym-it/lcu-public-web-react",
   "author": "Fathym, Inc",
   "main": "lcu.json",
@@ -12,4 +12,4 @@
     "lcu"
   ],
   "license": "MIT"
-} 
+}
