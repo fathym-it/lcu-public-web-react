@@ -1,7 +1,7 @@
 {
   "Package": {
-    "Name": "React Quickstart Project - Forked Recipe",
-    "Description": "A basic template to quickly deploy a React app to Fathym.",
+    "Name": "React Starter - GitHub Fork",
+    "Description": "A React starter app deployed to Fathym via a repository forked to your GitHub.",
     "Image": "https://www.fathym.com/img/react.png",
     "PreviewImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
     "Intents": [
@@ -13,11 +13,11 @@
   },
   "Configurations": {
     "Full": {
-      "Name": "React Quickstart",
-      "Description": "React Quickstart",
+      "Name": "React Starter - GitHub Fork",
+      "Description": "A React starter app deployed to Fathym via a repository forked to your GitHub.",
       "Phases": [
         {
-          "Name": "Setup React",
+          "Name": "Setting Up React Project",
           "Order": 1,
           "Asset": "react"
         }
